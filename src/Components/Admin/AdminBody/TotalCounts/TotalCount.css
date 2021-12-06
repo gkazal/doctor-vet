@@ -1,0 +1,18 @@
+.count-cards {
+  background-color: white;
+  padding: 12px;
+  text-align: left;
+  border-radius: 20px;
+}
+.count-cards p {
+  font-size: 12px;
+}
+
+.count-number p {
+  color: #258e00;
+  font-weight: bold;
+  font-size: 24px !important;
+}
+.count-title {
+  font-size: 12px;
+}
