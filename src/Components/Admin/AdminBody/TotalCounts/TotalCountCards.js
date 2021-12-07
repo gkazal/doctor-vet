@@ -22,24 +22,13 @@ const useStyles = makeStyles({
 const TotalCountCards = () => {
   const classes = useStyles();
   return (
-    <div>
-      {/* <div className="count-cards">
-        <div className="row count-title">
-          <p>Total Doctors</p>
-        </div>
-        <div className="row count-number">
-          <p>106</p>
-        </div>
-        <div className="row" style={{ opacity: "0.6" }}>
-          <p>View All</p>
-        </div>
-      </div> */}
+    <Box>
       <Box className={classes.body}>
         <Typography>Total Doctors</Typography>
         <Typography className={classes.cardBodyNumber}>106</Typography>
         <Typography className={classes.cardBodyFooter}>View All</Typography>
       </Box>
-    </div>
+    </Box>
   );
 };
 

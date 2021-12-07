@@ -5,77 +5,82 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
+import { Box, width } from "@mui/system";
 import React from "react";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faProcedures,
-  faSlidersH,
-  faUserMd,
-} from "@fortawesome/free-solid-svg-icons";
-import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
-import ShoppingCartCheckoutSharpIcon from "@mui/icons-material/ShoppingCartCheckoutSharp";
+import dashboard from "../../../../images/sidebar/dashboard.svg";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import department from "../../../../images/sidebar/department.svg";
+import doctor from "../../../../images/sidebar/doctor.svg";
+import patient from "../../../../images/sidebar/patient.svg";
+import account from "../../../../images/sidebar/account.svg";
+import discount from "../../../../images/sidebar/discount.svg";
+import aboutapp from "../../../../images/sidebar/aboutapp.svg";
+import "./AdminSideButton.css";
 
 const AdminSideButton = () => {
   return (
-    <div>
-      <Box>
-        <List>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Department" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Patient" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Account" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Discount" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="About" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </Box>
-    </div>
+    <Box>
+      <List className="icon">
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <img src={dashboard} alt="" />
+            </ListItemIcon>
+
+            <ListItemText primary="Dashboard" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <img src={department} alt="" />
+            </ListItemIcon>
+            <ListItemText primary="Department" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <img src={doctor} alt="" />
+            </ListItemIcon>
+            <ListItemText primary="Doctor" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <PersonOutlineIcon />
+            </ListItemIcon>
+            <ListItemText primary="User" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <img src={account} alt="" />
+            </ListItemIcon>
+            <ListItemText primary="Account" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <img src={discount} alt="" />
+            </ListItemIcon>
+            <ListItemText primary="Discount" />
+          </ListItemButton>
+        </ListItem>
+        <ListItem>
+          <ListItemButton>
+            <ListItemIcon>
+              <img src={aboutapp} alt="" />
+            </ListItemIcon>
+            <ListItemText primary="About" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+    </Box>
   );
 };
 

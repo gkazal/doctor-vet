@@ -1,6 +1,15 @@
-import { Grid, Typography } from "@mui/material";
+import { Menu } from "@mui/icons-material";
+import {
+  Grid,
+  Hidden,
+  IconButton,
+  SwipeableDrawer,
+  Typography,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React from "react";
+import { Box } from "@mui/system";
+import React, { useState } from "react";
+import AdminSidebarHome from "../AdminSideBar/AdminSideBarHome/AdminSidebarHome";
 
 const useStyles = makeStyles({
   body: {
@@ -9,7 +18,7 @@ const useStyles = makeStyles({
   },
 });
 
-const AdminNav = () => {
+const AdminNav = ({ drawerHandler, setOpenDrawer, openDrawer }) => {
   const classes = useStyles();
 
   return (
@@ -19,6 +28,13 @@ const AdminNav = () => {
           <Typography variant="h6" textAlign="left">
             Hello
           </Typography>
+          <Box>
+            <Hidden lgUp>
+              <IconButton onClick={() => drawerHandler(true)}>
+                <Menu />
+              </IconButton>
+            </Hidden>
+          </Box>
         </Grid>
         <Grid item lg={6}>
           <Typography variant="h6" textAlign="right">

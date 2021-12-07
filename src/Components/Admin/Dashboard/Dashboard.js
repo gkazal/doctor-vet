@@ -1,46 +1,104 @@
-import { Container, Grid, Typography } from "@mui/material";
+import {
+  Container,
+  Grid,
+  Hidden,
+  SwipeableDrawer,
+  Typography,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
-import React from "react";
-import AdminBody from "../AdminBody/AdminBodyHome/AdminBody";
+import React, { useState } from "react";
+import DashboardBody from "../AdminBody/DashboardBodyHome/DashboardBody";
 import AdminNav from "../AdminNavbar/AdminNav";
 import AdminSidebarHome from "../AdminSideBar/AdminSideBarHome/AdminSidebarHome";
+import DepartmentBody from "../DepartmentBody/DepartmentBody";
+import DoctoryBody from "../DoctorBody/DoctorBody";
+import UserBody from "../UserBody/UserBody";
 
 const useStyles = makeStyles({
+  wrapper: {
+    height: "100vh",
+    // minHeight: "100vh",
+  },
   sideNav: {
     backgroundColor: "#FFFFFF",
-    height: "100vh",
+    height: "100%",
     textAlign: "center",
     marginTop: "30px",
   },
   body: {
     fontSize: 30,
-    backgroundColor: "#E5E5E9",
-    height: "100vh",
+    backgroundColor: "#F5F5F7",
+    height: "100%",
+  },
+  fullHeight: {
+    height: "100%",
   },
 });
 
 const Dashboard = () => {
   const classes = useStyles();
+  const [openDrawer, setOpenDrawer] = useState(false);
+  const drawerHandler = (state) => {
+    setOpenDrawer(state);
+  };
   return (
-    <div>
-      <Grid container spacing={0}>
-        <Grid item lg={2} xl={2} md={2} sm={2} xs={2}>
+    <Box className={classes.wrapper}>
+      <Grid
+        container
+        spacing={0}
+        alignItems="stretch"
+        className={classes.fullHeight}
+      >
+        <Hidden lgDown>
+          <Grid
+            item
+            lg={2}
+            xl={2}
+            md={2}
+            sm={2}
+            xs={2}
+            className={classes.fullHeight}
+          >
+            <Box className={classes.sideNav}>
+              <AdminSidebarHome></AdminSidebarHome>
+            </Box>
+          </Grid>
+        </Hidden>
+
+        <SwipeableDrawer
+          anchor="left"
+          open={openDrawer}
+          onClose={() => drawerHandler(false)}
+          onOpen={() => drawerHandler(true)}
+        >
           <Box className={classes.sideNav}>
             <AdminSidebarHome></AdminSidebarHome>
           </Box>
-        </Grid>
+        </SwipeableDrawer>
 
-        <Grid item lg={10} xl={10} md={10} sm={10} xs={10}>
+        <Grid
+          item
+          lg={10}
+          xl={10}
+          md={12}
+          sm={12}
+          xs={12}
+          className={classes.fullHeight}
+        >
           <Box className={classes.body}>
             <Container maxWidth="xl">
-              <AdminNav></AdminNav>
-              <AdminBody></AdminBody>
+              <AdminNav drawerHandler={drawerHandler}></AdminNav>
+              {/* <DashboardBody></DashboardBody> */}
+
+              {/* <DoctoryBody /> */}
+              {/* <UserBody></UserBody> */}
+              <DepartmentBody></DepartmentBody>
             </Container>
           </Box>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 };
 
