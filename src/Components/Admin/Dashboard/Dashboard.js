@@ -8,10 +8,13 @@ import {
 import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
+import AboutBody from "../AboutBody/AboutBody";
 import DashboardBody from "../AdminBody/DashboardBodyHome/DashboardBody";
 import AdminNav from "../AdminNavbar/AdminNav";
 import AdminSidebarHome from "../AdminSideBar/AdminSideBarHome/AdminSidebarHome";
+import Advertisement from "../Advertisement/Advertisement";
 import DepartmentBody from "../DepartmentBody/DepartmentBody";
+import DiscountBody from "../DiscountBody/DiscountBody";
 import DoctoryBody from "../DoctorBody/DoctorBody";
 import UserBody from "../UserBody/UserBody";
 
@@ -93,7 +96,10 @@ const Dashboard = () => {
 
               {/* <DoctoryBody /> */}
               {/* <UserBody></UserBody> */}
-              <DepartmentBody></DepartmentBody>
+              {/* <DepartmentBody></DepartmentBody> */}
+              {/* <AboutBody></AboutBody> */}
+              {/* <DiscountBody></DiscountBody> */}
+              <Advertisement></Advertisement>
             </Container>
           </Box>
         </Grid>

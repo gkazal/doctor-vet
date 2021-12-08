@@ -1,10 +1,12 @@
 import {
-  Button,
-  Container,
+  Dialog,
+  DialogContent,
+  FormControl,
   Grid,
-  Hidden,
-  SwipeableDrawer,
-  Typography,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { Box, grid } from "@mui/system";
@@ -12,17 +14,20 @@ import React, { useState } from "react";
 
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CommonTable from "../CommonTable/CommonTable";
-import { PortionTitle } from "../../../styles/globalStyled";
-
-const useStyles = makeStyles({
-  doctorBottom: {
-    borderBottom: "3px solid #258E00",
-    width: "60px",
-  },
-});
+import {
+  AddButton,
+  PortionButton,
+  PortionTitle,
+  UploadFileButton,
+} from "../../../styles/globalStyled";
+import AddDoctroDialog from "./AddDoctroDialog";
+import DoctorProfileDialog from "./DoctorProfileDialog";
 
 const DoctorBody = () => {
-  const classes = useStyles();
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(<AddDoctroDialog />);
+
   return (
     <Box>
       <Grid container lg={11}>
@@ -31,11 +36,18 @@ const DoctorBody = () => {
         </Grid>
 
         <Grid item lg={6} md={6} sm={6} xs={6} textAlign="right">
-          <Button>
+          <PortionButton onClick={handleOpen}>
             <AddCircleIcon />
             Add Doctor
-          </Button>
+          </PortionButton>
         </Grid>
+        <Box>
+          {/* <AddDoctroDialog open={open} setOpen={setOpen}></AddDoctroDialog> */}
+          <DoctorProfileDialog
+            open={open}
+            setOpen={setOpen}
+          ></DoctorProfileDialog>
+        </Box>
 
         <Grid item lg={12} md={12} sm={12} xs={12} sx={{ pt: 5 }}>
           <CommonTable />
