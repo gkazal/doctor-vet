@@ -64,3 +64,9 @@ export const LinePortion = withStyles(() => ({
     },
   },
 }))(Typography);
+export const ParagraphBoldText = withStyles(() => ({
+  root: {
+    fontSize: "18px !important",
+    fontWeight: "500 !important",
+  },
+}))(Typography);

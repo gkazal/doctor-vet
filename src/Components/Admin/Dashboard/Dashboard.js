@@ -9,6 +9,7 @@ import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import AboutBody from "../AboutBody/AboutBody";
+import AccountBody from "../AccountBody/AccountBody";
 import DashboardBody from "../AdminBody/DashboardBodyHome/DashboardBody";
 import AdminNav from "../AdminNavbar/AdminNav";
 import AdminSidebarHome from "../AdminSideBar/AdminSideBarHome/AdminSidebarHome";
@@ -96,10 +97,12 @@ const Dashboard = () => {
 
               {/* <DoctoryBody /> */}
               {/* <UserBody></UserBody> */}
+              {/* <AccountBody></AccountBody> */}
+
               {/* <DepartmentBody></DepartmentBody> */}
-              {/* <AboutBody></AboutBody> */}
+              <AboutBody></AboutBody>
               {/* <DiscountBody></DiscountBody> */}
-              <Advertisement></Advertisement>
+              {/* <Advertisement></Advertisement> */}
             </Container>
           </Box>
         </Grid>

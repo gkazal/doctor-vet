@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Button,
   Dialog,
   DialogContent,
   FormControl,
@@ -23,75 +24,64 @@ import {
   PortionTitle,
   UploadFileButton,
 } from "../../../styles/globalStyled";
+import GoogleAdd from "./GoogleAdd";
+import FacebookAdd from "./FacebookAdd";
+import CustomAd from "./CustomAd";
+import StartupAd from "./StartupAd";
 
 const useStyles = makeStyles({
-  title: {
-    backgroundColor: "red !important",
-    height: "80px !important",
+  btn: {
+    backgroundColor: "#DA0F0F !important",
+    color: "white!important",
+    borderRadius: "8px!important",
+    padding: "20px!important",
+    width: "252px!important",
   },
-  googleBody: {
-    backgroundColor: "white",
-    height: "700px",
-  },
-  click: {
-    border: "1px solid rgba(0, 0, 0, 0.2) ",
-    padding: "20px",
+  addManage: {
+    position: "relative",
+    paddingBottom: 5,
+    color: "#E34133 !important",
+    fontWeight: "600!important",
+    marginBottom: "20px !important",
+
+    "&::after": {
+      position: "absolute",
+      content: "''",
+      width: "50px",
+      height: "5px",
+      backgroundColor: "#E34133",
+      bottom: 0,
+      left: 0,
+    },
   },
 });
+
 const Advertisement = () => {
-  const label = { inputProps: { "aria-label": "Switch demo" } };
   const classes = useStyles();
   return (
     <>
-      <Box>
-        <Grid container lg={12}>
-          <Grid container lg={6} className={classes.googleBody}>
-            <Grid container lg={12} className={classes.title} p={3}>
-              <Grid item lg={6}>
-                <Box mt={1}>
-                  <Typography>Google Add</Typography>
-                </Box>
-              </Grid>
-              <Grid item lg={6}>
-                <Box textAlign="right">
-                  <Switch {...label} defaultChecked />
-                </Box>
-              </Grid>
-              <Grid item lg={12} mt={4}>
-                <Typography>Banner Admob ID</Typography>
-              </Grid>
-              <Grid item lg={12} mt={2}>
-                <TextField
-                  id="outlined-basic"
-                  label="banner"
-                  variant="outlined"
-                  fullWidth
-                />
-              </Grid>
-              <Grid item lg={12} mt={4}>
-                <Typography>Interestical Admob ID</Typography>
-              </Grid>
-              <Grid item lg={12} mt={2}>
-                <TextField label="banner" variant="outlined" fullWidth />
-              </Grid>
-              <Grid item lg={12} mt={2}>
-                <Box className={classes.click}>
-                  <Typography>Inerestical Admob Click</Typography>
-                  <TextField
-                    label="banner"
-                    variant="outlined"
-                    fullWidth
-                  ></TextField>
-                </Box>
-              </Grid>
-            </Grid>
-          </Grid>
-
-          <Grid container lg={6}>
-            <Typography>Facebook Add</Typography>
-          </Grid>
+      <Grid container lg={12} spacing={0}>
+        <Grid item lg={12} md={12} sm={12} xs={12}>
+          <Typography className={classes.addManage}>Add Manage</Typography>
         </Grid>
-      </Box>
+        <Grid item lg={6} md={6} sm={12} xs={12}>
+          <GoogleAdd />
+        </Grid>
+        <Grid item lg={6} md={6} sm={12} xs={12}>
+          <FacebookAdd />
+        </Grid>
+      </Grid>
+      <Grid container lg={12} mt={3}>
+        <CustomAd />
+      </Grid>
+      <Grid container lg={12} mt={3}>
+        <StartupAd />
+      </Grid>
+      <Grid container lg={12} mt={5} sx={{ justifyContent: "center" }}>
+        <Box>
+          <Button className={classes.btn}>Save</Button>
+        </Box>
+      </Grid>
     </>
   );
 };

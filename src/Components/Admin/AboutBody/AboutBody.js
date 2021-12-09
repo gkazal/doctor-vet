@@ -3,6 +3,8 @@ import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { AddButton, LinePortion } from "../../../styles/globalStyled";
+import AccountInfoDialog from "../AccountBody/AccountInfoDialog";
+import AccountInfoDialogAuth from "../AccountBody/AccountInfoDialogAuth";
 import AboutEditDialog from "./AboutEditDialog";
 
 const useStyles = makeStyles({
@@ -23,7 +25,10 @@ const AboutBody = () => {
 
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => setOpen(<AboutEditDialog />);
+  const handleOpen = () =>
+    // setOpen(<AboutEditDialog />);
+    // setOpen(<AccountInfoDialog />);
+    setOpen(<AccountInfoDialogAuth />);
 
   return (
     <Box mt={5}>
@@ -124,7 +129,12 @@ const AboutBody = () => {
         </Grid>
       </Grid>
       <Box>
-        <AboutEditDialog open={open} setOpen={setOpen}></AboutEditDialog>
+        {/* <AboutEditDialog open={open} setOpen={setOpen}></AboutEditDialog> */}
+        {/* <AccountInfoDialog open={open} setOpen={setOpen}></AccountInfoDialog> */}
+        <AccountInfoDialogAuth
+          open={open}
+          setOpen={setOpen}
+        ></AccountInfoDialogAuth>
       </Box>
     </Box>
   );

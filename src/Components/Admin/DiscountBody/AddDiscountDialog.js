@@ -1,22 +1,15 @@
 import React from "react";
 import {
-  Button,
   Dialog,
   DialogContent,
   FormControl,
-  Grid,
   InputLabel,
   MenuItem,
   Select,
   TextField,
   Typography,
 } from "@mui/material";
-import {
-  AddButton,
-  PortionButton,
-  PortionTitle,
-  UploadFileButton,
-} from "../../../styles/globalStyled";
+import { AddButton, UploadFileButton } from "../../../styles/globalStyled";
 import { Box } from "@mui/system";
 
 import PublishIcon from "@mui/icons-material/Publish";

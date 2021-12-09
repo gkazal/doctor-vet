@@ -1,24 +1,29 @@
 import {
-  Grid,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Box, width } from "@mui/system";
+import { Box } from "@mui/system";
 import React from "react";
 import dashboard from "../../../../images/sidebar/dashboard.svg";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import department from "../../../../images/sidebar/department.svg";
 import doctor from "../../../../images/sidebar/doctor.svg";
-import patient from "../../../../images/sidebar/patient.svg";
 import account from "../../../../images/sidebar/account.svg";
 import discount from "../../../../images/sidebar/discount.svg";
 import aboutapp from "../../../../images/sidebar/aboutapp.svg";
 import "./AdminSideButton.css";
 
+import Collapse from "@mui/material/Collapse";
 const AdminSideButton = () => {
+  const [open, setOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
+
   return (
     <Box>
       <List className="icon">
@@ -55,14 +60,33 @@ const AdminSideButton = () => {
             <ListItemText primary="User" />
           </ListItemButton>
         </ListItem>
+
         <ListItem>
-          <ListItemButton>
+          <ListItemButton onClick={handleClick}>
             <ListItemIcon>
               <img src={account} alt="" />
             </ListItemIcon>
             <ListItemText primary="Account" />
+            {/* {open ? <ExpandLess /> : <ExpandMore />} */}
           </ListItemButton>
         </ListItem>
+        <Collapse in={open} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            <ListItemButton sx={{ pl: 4 }}>
+              <ListItemIcon>
+                {/* <FiberManualRecordIcon sx={{ fontSize: "7px" }} /> */}
+              </ListItemIcon>
+              <ListItemText primary="Payment Creation" />
+            </ListItemButton>
+            <ListItemButton sx={{ pl: 4 }}>
+              <ListItemIcon>
+                {/* <FiberManualRecordIcon sx={{ fontSize: "7px" }} /> */}
+              </ListItemIcon>
+              <ListItemText primary="Authorization" />
+            </ListItemButton>
+          </List>
+        </Collapse>
+
         <ListItem>
           <ListItemButton>
             <ListItemIcon>

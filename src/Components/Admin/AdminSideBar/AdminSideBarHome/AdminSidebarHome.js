@@ -1,6 +1,6 @@
 import { InputBase, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { alpha, Box } from "@mui/system";
+import { Box } from "@mui/system";
 import React from "react";
 import Search from "@mui/icons-material/Search";
 import AdminSideButton from "../AdminSideButton/AdminSideButton";
